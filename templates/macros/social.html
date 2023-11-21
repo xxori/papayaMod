@@ -51,11 +51,12 @@
   {% endif %}
 
   {% if social_config.email %}
-  <a href="mailto:{{ social_config.email }}" aria-label="Email me" target="_blank">
+  <a id="email_obf" href="javascript:void('Loading...')" aria-label="Email me" target="_self">
     <span class="icon is-large">
       <i class="far fa-envelope fa-lg" aria-hidden="true" title="email"></i>
     </span>
   </a>
+  <script>document.getElementById("email_obf").href=atob("{{ "mailto:" ~ social_config.email | base64_encode }}"); document.getElementById("email_obf").target="_blank";</script>
   {% endif %}
 
   {% if config.generate_feed %}
