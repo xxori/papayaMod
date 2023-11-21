@@ -1,4 +1,4 @@
-@use "syntax-theme-dark";
+// @use "syntax-theme-dark";
 
 @mixin theme($theme: dark) {
     --background-color: rgb(24, 24, 24);
@@ -17,7 +17,7 @@
 
 :root {
     @include theme($theme: dark);
-    @include syntax-theme-dark.dark;
+    // @include syntax-theme-dark.dark;
 }
 
 .img-dark {
